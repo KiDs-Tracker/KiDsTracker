@@ -57,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    //Navigates to calendar
                     case R.id.action_calendar:
                         item.setCheckable(true);
                         Toast.makeText(HomeActivity.this, "Clicked on calendar", Toast.LENGTH_LONG).show();
@@ -64,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_notes:
+                        //Navigates to notes
                         item.setCheckable(true);
                         Toast.makeText(HomeActivity.this, "Clicked on notes", Toast.LENGTH_LONG).show();
                         navController.navigate(R.id.nav_notes);
