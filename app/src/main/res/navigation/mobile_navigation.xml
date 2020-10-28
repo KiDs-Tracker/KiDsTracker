@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.kidstracker.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_health_care"
+        android:name="com.example.kidstracker.ui.healthcare.HealthCareFragment"
+        android:label="@string/menu_my_health_care_group"
+        tools:layout="@layout/fragment_health_care" />
+
+    <fragment
+        android:id="@+id/nav_children"
+        android:name="com.example.kidstracker.ui.children.ChildrenFragment"
+        android:label="@string/menu_children"
+        tools:layout="@layout/fragment_children" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.kidstracker.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.example.kidstracker.ui.calendar.CalendarFragment"
+        android:label="@string/menu_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/nav_notes"
+        android:name="com.example.kidstracker.ui.notes.NotesFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_notes" />
+</navigation>
