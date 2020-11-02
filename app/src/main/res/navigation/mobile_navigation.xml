@@ -40,4 +40,10 @@
         android:name="com.example.kidstracker.ui.notes.NotesFragment"
         android:label="@string/menu_notes"
         tools:layout="@layout/fragment_notes" />
+
+    <fragment
+        android:id="@+id/nav_add_notes"
+        android:name="com.example.kidstracker.ui.notes.AddNotesFragment"
+        android:label="Add Notes"
+        tools:layout="@layout/fragment__add_notes" />
 </navigation>
