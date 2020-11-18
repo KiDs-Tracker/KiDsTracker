@@ -17,23 +17,15 @@ import android.widget.TextView;
 import com.example.kidstracker.R;
 
 public class CalendarFragment extends Fragment {
-
-    private CalendarViewModel mViewModel;
-
+    private CustomCalendarView customCalendarView;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        mViewModel = new ViewModelProvider(this).get(CalendarViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_calendar, container, false);
-        final TextView textView = root.findViewById(R.id.text_calendar);
-        mViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        customCalendarView = root.findViewById(R.id.custom_calendar);
+
         return root;
     }
 
