@@ -12,7 +12,7 @@ import com.example.kidstracker.database.dao.NoteDao;
 import com.example.kidstracker.models.Events;
 import com.example.kidstracker.models.Note;
 
-@Database(entities = {Note.class, Events.class}, version = 2)
+@Database(entities = {Note.class, Events.class}, version = 3)
 public abstract class KidsTrackingDatabase extends RoomDatabase {
 
     private static KidsTrackingDatabase instance;
