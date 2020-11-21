@@ -41,6 +41,14 @@
                 android:text="Time"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/ib_alarm"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_notifications_off_24"/>
             <Button
                 android:id="@+id/delete"
                 android:layout_width="match_parent"
