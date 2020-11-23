@@ -27,13 +27,7 @@ public class ChildrenFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(ChildrenViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_children, container, false);
-        final TextView textView = root.findViewById(R.id.text_children);
-        mViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 
