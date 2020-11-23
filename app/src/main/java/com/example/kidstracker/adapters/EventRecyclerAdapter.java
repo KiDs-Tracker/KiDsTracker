@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -72,6 +73,8 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
         private TextView eventTextView;
         private TextView timeTextView;
         private Button deleteButton;
+        private ImageButton setAlarmImageButton;
+
         public EventRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -79,6 +82,7 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
             eventTextView = itemView.findViewById(R.id.event_name);
             timeTextView = itemView.findViewById(R.id.event_time);
             deleteButton = itemView.findViewById(R.id.delete);
+            setAlarmImageButton = itemView.findViewById(R.id.ib_alarm);
         }
     }
 }
