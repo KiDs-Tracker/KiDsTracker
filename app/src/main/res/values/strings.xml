@@ -17,4 +17,11 @@
     <!-- Bottom Drawer labels -->
     <string name="menu_calendar">Calendar</string>
     <string name="menu_notes">Notes</string>
+
+    <!-- Array list of genders -->
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
 </resources>
