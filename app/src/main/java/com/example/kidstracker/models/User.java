@@ -22,25 +22,10 @@ public class User implements Serializable {
 
     private String email;
 
-    private String dateOfBirth;
-
-    private int gender;
-
-    public User(String userName, String password, String email, String dateOfBirth, int gender) {
+    public User(String userName, String password, String email) {
         this.userName = userName;
         this.password = password;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-    }
-
-    @Ignore
-    public User(String userName, String password, String email, int gender) {
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
     }
 
     public int getId() {
@@ -75,19 +60,4 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public int getGender() {
-        return gender;
-    }
-
-    public void setGender(int gender) {
-        this.gender = gender;
-    }
 }

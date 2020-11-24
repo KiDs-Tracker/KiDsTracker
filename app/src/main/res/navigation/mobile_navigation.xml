@@ -46,4 +46,11 @@
         android:name="com.example.kidstracker.ui.notes.AddNotesFragment"
         android:label="Add Notes"
         tools:layout="@layout/fragment__add_notes" />
+
+    <fragment
+        android:id="@+id/nav_child_registration"
+        android:name="com.example.kidstracker.ui.childregistration.ChildRegistrationFragment"
+        android:label="Register Child"
+        tools:layout="@layout/child_registration_fragment" />
+
 </navigation>

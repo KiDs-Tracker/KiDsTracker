@@ -24,4 +24,9 @@
         <item>Female</item>
     </string-array>
 
+    <!-- Array list of diagnosis -->
+    <string-array name="diagnosis_list">
+        <item>Down Syndrome</item>
+    </string-array>
+
 </resources>
