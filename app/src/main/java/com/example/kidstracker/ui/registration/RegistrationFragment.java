@@ -32,7 +32,7 @@ import java.util.List;
 import es.dmoral.toasty.Toasty;
 
 
-public class RegistrationFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+public class RegistrationFragment extends Fragment {
 
     private RegistrationViewModel mViewModel;
     private FragmentRegistrationBinding mBinding;
@@ -44,39 +44,10 @@ public class RegistrationFragment extends Fragment implements DatePickerDialog.O
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_registration, container, false);
         View root = mBinding.getRoot();
 
-        onDatePickerClick();
         onSignUpClick();
         onRegisteredAlreadyClick();
-        onGenderClick();
 
         return root;
-    }
-
-    private void onGenderClick() {
-        mBinding.ibGender.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Pick a gender")
-                .setItems(R.array.gender_list, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String gender = "";
-                        switch (which) {
-                            case 0:
-                                gender = "Male";
-                                mBinding.tvGender.setText(gender);
-                                break;
-                            case 1:
-                                gender = "Female";
-                                mBinding.tvGender.setText(gender);
-                                break;
-                        }
-                    }
-                });
-                builder.show();
-            }
-        });
     }
 
     private void onSignUpClick() {
@@ -87,23 +58,14 @@ public class RegistrationFragment extends Fragment implements DatePickerDialog.O
                 String email = mBinding.etEmail.getText().toString().trim();
                 String password = mBinding.etPassword.getText().toString().trim();
                 String confirmedPassword = mBinding.etPasswordConfirm.getText().toString().trim();
-                String dateOfBirth = mBinding.tvDate.getText().toString().trim();
-                String gender = mBinding.tvGender.getText().toString().trim();
 
-                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmedPassword.isEmpty() || dateOfBirth.isEmpty() || gender.isEmpty()) {
+                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmedPassword.isEmpty()) {
                     Toasty.error(getActivity(), "Please fill out all entries!", Toast.LENGTH_SHORT, true).show();
 
-                } else if (!(username.isEmpty()) && !(email.isEmpty()) && !(password.isEmpty()) && !(confirmedPassword.isEmpty()) && !(dateOfBirth.isEmpty()) && !(gender.isEmpty())) {
+                } else if (!(username.isEmpty()) && !(email.isEmpty()) && !(password.isEmpty()) && !(confirmedPassword.isEmpty())) {
 
                     if (password.equals(confirmedPassword)) {
-                        int num = 0;
-                        if(gender.equals("Male")) {
-                            num = 0;
-                        } else if (gender.equals("Female")) {
-                            num = 1;
-                        }
-
-                        User user = new User(username, password, email, dateOfBirth, num);
+                        User user = new User(username, password, email);
                         mViewModel.insertUser(user);
                         goToLogin();
                     } else {
@@ -130,28 +92,5 @@ public class RegistrationFragment extends Fragment implements DatePickerDialog.O
         LoginFragment fragment = new LoginFragment();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
-    }
-
-    private void onDatePickerClick() {
-        mBinding.ibDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        getContext(),
-                        RegistrationFragment.this,
-                        Calendar.getInstance().get(Calendar.YEAR),
-                        Calendar.getInstance().get(Calendar.MONTH),
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-                );
-                datePickerDialog.show();
-            }
-        });
-    }
-
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        int Month = month + 1;
-        String date = Month + "/" + dayOfMonth + "/" + year;
-        mBinding.tvDate.setText(date);
     }
 }
