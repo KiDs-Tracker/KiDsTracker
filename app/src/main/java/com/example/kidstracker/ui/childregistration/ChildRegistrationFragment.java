@@ -81,7 +81,7 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Pick a gender")
-                        .setItems(R.array.gender_list, new DialogInterface.OnClickListener() {
+                        .setItems(array.gender_list.R, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 String gender = "";
