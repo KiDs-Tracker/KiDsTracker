@@ -49,7 +49,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="CHILD(REN) PROFILE"
+        android:text="WHICH PROFILE"
         android:background="@drawable/text_entry_border"
         android:gravity="center_horizontal|center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
