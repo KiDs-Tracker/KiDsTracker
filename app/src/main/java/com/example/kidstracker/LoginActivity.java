@@ -19,9 +19,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        Intent n = new Intent( LoginActivity.this, LoginActivity.class);
-//        n.putExtra("UserName", _username);
-        startActivity(n);
 
         mBinding.bvContinue.setOnClickListener(new View.OnClickListener() {
             @Override
