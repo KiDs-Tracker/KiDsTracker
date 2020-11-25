@@ -4,7 +4,7 @@
 
     <!-- View background color -->
     <solid
-        android:color="@color/design_default_color_background" >
+        android:color="@color/purple_500" >
     </solid>
 
     <!-- View border color and width -->
