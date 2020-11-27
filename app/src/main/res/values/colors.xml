@@ -10,4 +10,11 @@
 
     <!-- background color -->
     <color name="bg_color"></color>
+
+    <!-- brand colors -->
+    <color name="primary">#0091B9</color>
+    <color name="primary_light">#83C3D9</color>
+    <color name="primary_dark">#12475D</color>
+    <color name="secondary">#EDB660</color>
+    <color name="secondary_dark">#F47D4F</color>
 </resources>
