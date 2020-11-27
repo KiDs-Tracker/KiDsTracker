@@ -60,13 +60,14 @@ public abstract class KidsTrackingDatabase extends RoomDatabase {
                                     medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the immune system?", "Yes", "No", "I don't know"));
 
                                     RoutineScreeningQuestionDao routineScreeningQuestionDao = getInstance(context).routineScreeningQuestionDao();
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last well check up?", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next well check up?", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("Is your child's hearing normal? (Were they able to pass their hearing test?)", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next hearing test?", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last eye exam?", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for low iron or anemia?", "Date", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for thyroid problems?", "Date", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last well check up?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next well check up?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last hearing test?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("Is your child's hearing normal? (Were they able to pass their hearing test?)", "", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next hearing test?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last eye exam?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for low iron or anemia?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for thyroid problems?", "Date:", "I don't know"));
 
                                 }
                             });
