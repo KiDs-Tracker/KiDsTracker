@@ -30,7 +30,7 @@ public class Child implements Serializable {
 
     private String baseHearing;
 
-    private String baseHearingResult;
+    private int baseHearingResult;
 
     private String baseNextHearing;
 
@@ -40,38 +40,41 @@ public class Child implements Serializable {
 
     private String baseTSH;
 
-    private String priorSurgeries;
+    private int priorSurgeries;
 
-    private String priorEyeProblems;
+    private int priorEyeProblems;
 
-    private String priorHearingProblems;
+    private int priorHearingProblems;
 
-    private String priorNeckProblems;
+    private int priorNeckProblems;
 
-    private String priorThyroidProblems;
+    private int priorThyroidProblems;
 
-    private String priorHeartProblems;
+    private int priorHeartProblems;
 
-    private String priorBreathingProblems;
+    private int priorBreathingProblems;
 
-    private String priorConstipationProblems;
+    private int priorConstipationProblems;
 
-    private String priorSleepingProblems;
+    private int priorSleepingProblems;
 
-    private String priorBrainProblems;
+    private int priorBrainProblems;
 
-    private String priorBloodProblems;
+    private int priorBloodProblems;
 
-    private String priorImmuneProblems;
+    private int priorImmuneProblems;
+
+    @Ignore
+    public Child(){}
 
     public Child(String firstName, String lastName, String dateOfBirth, int gender,
                  int diagnosis, String baseWCC, String baseNextWCC, String baseHearing,
-                 String baseHearingResult, String baseNextHearing, String baseVision,
-                 String baseHGB, String baseTSH, String priorSurgeries, String priorEyeProblems,
-                 String priorHearingProblems, String priorNeckProblems, String priorThyroidProblems,
-                 String priorHeartProblems, String priorBreathingProblems, String priorConstipationProblems,
-                 String priorSleepingProblems, String priorBrainProblems, String priorBloodProblems,
-                 String priorImmuneProblems) {
+                 int baseHearingResult, String baseNextHearing, String baseVision,
+                 String baseHGB, String baseTSH, int priorSurgeries, int priorEyeProblems,
+                 int priorHearingProblems, int priorNeckProblems, int priorThyroidProblems,
+                 int priorHeartProblems, int priorBreathingProblems, int priorConstipationProblems,
+                 int priorSleepingProblems, int priorBrainProblems, int priorBloodProblems,
+                 int priorImmuneProblems) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -180,11 +183,11 @@ public class Child implements Serializable {
         this.baseHearing = baseHearing;
     }
 
-    public String getBaseHearingResult() {
+    public int getBaseHearingResult() {
         return baseHearingResult;
     }
 
-    public void setBaseHearingResult(String baseHearingResult) {
+    public void setBaseHearingResult(int baseHearingResult) {
         this.baseHearingResult = baseHearingResult;
     }
 
@@ -220,99 +223,99 @@ public class Child implements Serializable {
         this.baseTSH = baseTSH;
     }
 
-    public String getPriorSurgeries() {
+    public int getPriorSurgeries() {
         return priorSurgeries;
     }
 
-    public void setPriorSurgeries(String priorSurgeries) {
+    public void setPriorSurgeries(int priorSurgeries) {
         this.priorSurgeries = priorSurgeries;
     }
 
-    public String getPriorEyeProblems() {
+    public int getPriorEyeProblems() {
         return priorEyeProblems;
     }
 
-    public void setPriorEyeProblems(String priorEyeProblems) {
+    public void setPriorEyeProblems(int priorEyeProblems) {
         this.priorEyeProblems = priorEyeProblems;
     }
 
-    public String getPriorHearingProblems() {
+    public int getPriorHearingProblems() {
         return priorHearingProblems;
     }
 
-    public void setPriorHearingProblems(String priorHearingProblems) {
+    public void setPriorHearingProblems(int priorHearingProblems) {
         this.priorHearingProblems = priorHearingProblems;
     }
 
-    public String getPriorNeckProblems() {
+    public int getPriorNeckProblems() {
         return priorNeckProblems;
     }
 
-    public void setPriorNeckProblems(String priorNeckProblems) {
+    public void setPriorNeckProblems(int priorNeckProblems) {
         this.priorNeckProblems = priorNeckProblems;
     }
 
-    public String getPriorThyroidProblems() {
+    public int getPriorThyroidProblems() {
         return priorThyroidProblems;
     }
 
-    public void setPriorThyroidProblems(String priorThyroidProblems) {
+    public void setPriorThyroidProblems(int priorThyroidProblems) {
         this.priorThyroidProblems = priorThyroidProblems;
     }
 
-    public String getPriorHeartProblems() {
+    public int getPriorHeartProblems() {
         return priorHeartProblems;
     }
 
-    public void setPriorHeartProblems(String priorHeartProblems) {
+    public void setPriorHeartProblems(int priorHeartProblems) {
         this.priorHeartProblems = priorHeartProblems;
     }
 
-    public String getPriorBreathingProblems() {
+    public int getPriorBreathingProblems() {
         return priorBreathingProblems;
     }
 
-    public void setPriorBreathingProblems(String priorBreathingProblems) {
+    public void setPriorBreathingProblems(int priorBreathingProblems) {
         this.priorBreathingProblems = priorBreathingProblems;
     }
 
-    public String getPriorConstipationProblems() {
+    public int getPriorConstipationProblems() {
         return priorConstipationProblems;
     }
 
-    public void setPriorConstipationProblems(String priorConstipationProblems) {
+    public void setPriorConstipationProblems(int priorConstipationProblems) {
         this.priorConstipationProblems = priorConstipationProblems;
     }
 
-    public String getPriorSleepingProblems() {
+    public int getPriorSleepingProblems() {
         return priorSleepingProblems;
     }
 
-    public void setPriorSleepingProblems(String priorSleepingProblems) {
+    public void setPriorSleepingProblems(int priorSleepingProblems) {
         this.priorSleepingProblems = priorSleepingProblems;
     }
 
-    public String getPriorBrainProblems() {
+    public int getPriorBrainProblems() {
         return priorBrainProblems;
     }
 
-    public void setPriorBrainProblems(String priorBrainProblems) {
+    public void setPriorBrainProblems(int priorBrainProblems) {
         this.priorBrainProblems = priorBrainProblems;
     }
 
-    public String getPriorBloodProblems() {
+    public int getPriorBloodProblems() {
         return priorBloodProblems;
     }
 
-    public void setPriorBloodProblems(String priorBloodProblems) {
+    public void setPriorBloodProblems(int priorBloodProblems) {
         this.priorBloodProblems = priorBloodProblems;
     }
 
-    public String getPriorImmuneProblems() {
+    public int getPriorImmuneProblems() {
         return priorImmuneProblems;
     }
 
-    public void setPriorImmuneProblems(String priorImmuneProblems) {
+    public void setPriorImmuneProblems(int priorImmuneProblems) {
         this.priorImmuneProblems = priorImmuneProblems;
     }
 }
