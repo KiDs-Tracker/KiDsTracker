@@ -21,18 +21,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.example.kidstracker.R;
 import com.example.kidstracker.databinding.ChildRegistrationFragmentBinding;
+import com.example.kidstracker.models.Child;
+import com.example.kidstracker.models.User;
 import com.example.kidstracker.ui.registration.RegistrationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class ChildRegistrationFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
 
-    private ChildRegistrationViewModel mViewModel;
     private ChildRegistrationFragmentBinding mBinding;
+    private Child mChild = new Child();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -63,6 +68,7 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
                                     case 0:
                                         diagnosis = "Down Syndrome";
                                         mBinding.tvDiagnosis.setText(diagnosis);
+                                        mChild.setDiagnosis(0);
                                         break;
                                 }
                             }
@@ -73,6 +79,30 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
     }
 
     private void onRegisterChildClick() {
+        mBinding.btRegisterChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertNameToChild();
+                if (!(mChild.getDateOfBirth() == null) && (mChild.getGender() == 0 || mChild.getGender() == 1) && mChild.getDiagnosis() == 0) {
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("child", mChild);
+                    Navigation.findNavController(v).navigate(R.id.nav_child_screening, bundle);
+                } else {
+                    Toasty.error(getActivity(), "Please fill out all entries!", Toast.LENGTH_SHORT, true).show();
+                }
+            }
+        });
+    }
+
+    private void insertNameToChild() {
+        String firstName = mBinding.etFirstName.getText().toString().trim();
+        String lastName = mBinding.etLastName.getText().toString().trim();
+        if (!firstName.isEmpty() && !lastName.isEmpty()) {
+            mChild.setFirstName(firstName);
+            mChild.setLastName(lastName);
+        } else {
+            Toasty.error(getActivity(), "Please fill out all entries!", Toast.LENGTH_SHORT, true).show();
+        }
     }
 
     private void onGenderClick() {
@@ -89,10 +119,12 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
                                     case 0:
                                         gender = "Male";
                                         mBinding.tvGender.setText(gender);
+                                        mChild.setGender(0);
                                         break;
                                     case 1:
                                         gender = "Female";
                                         mBinding.tvGender.setText(gender);
+                                        mChild.setGender(1);
                                         break;
                                 }
                             }
@@ -119,15 +151,10 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ChildRegistrationViewModel.class);
-    }
-
-    @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         int Month = month + 1;
         String date = Month + "/" + dayOfMonth + "/" + year;
         mBinding.tvDate.setText(date);
+        mChild.setDateOfBirth(date);
     }
 }
