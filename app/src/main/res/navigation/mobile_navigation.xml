@@ -53,4 +53,16 @@
         android:label="Register Child"
         tools:layout="@layout/child_registration_fragment" />
 
+    <fragment
+        android:id="@+id/nav_child_screening"
+        android:name="com.example.kidstracker.ui.childregistration.screeningquestions.ScreeningQuestionsFragment"
+        android:label="Routine Questions"
+        tools:layout="@layout/screening_questions_fragment" />
+
+    <fragment
+        android:id="@+id/nav_child_medical"
+        android:name="com.example.kidstracker.ui.childregistration.medicalquestions.MedicalQuestionsFragment"
+        android:label="Medical Questions"
+        tools:layout="@layout/medical_questions_fragment" />
+
 </navigation>
