@@ -8,13 +8,11 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -48,7 +46,7 @@ public class HomeFragment extends Fragment {
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toasty.warning(getActivity(), "Beware that the app requires a child", Toast.LENGTH_SHORT, true).show();
+                        Toasty.warning(getActivity(), "Warning: The app requires a child", Toast.LENGTH_SHORT, true).show();
                         dialog.dismiss();
                     }
                 })
