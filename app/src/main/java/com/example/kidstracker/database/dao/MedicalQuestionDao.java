@@ -1,5 +1,6 @@
 package com.example.kidstracker.database.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -15,5 +16,5 @@ public interface MedicalQuestionDao {
     void insertMedicalQuestion(MedicalQuestion medicalQuestion);
 
     @Query("SELECT * FROM medicalquestion")
-    List<MedicalQuestion> getListOfMedicalQuestions();
+    LiveData<List<MedicalQuestion>> getListOfMedicalQuestions();
 }

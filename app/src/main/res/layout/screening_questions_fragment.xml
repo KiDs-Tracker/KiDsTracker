@@ -10,7 +10,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.childregistration.ChildRegistrationFragment">
+        tools:context=".ui.childregistration.screeningquestions.ScreeningQuestionsFragment">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_question"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:max="8"
+            android:progress="0"/>
 
         <TextView
             android:id="@+id/tv_logo"
@@ -31,13 +42,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="24dp"
-            android:text="Register Child"
+            android:text="Routine Screening Questions"
+            android:gravity="center"
             android:textColor="@android:color/black"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_logo" />
 
         <LinearLayout
@@ -53,38 +66,34 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_register_label"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <EditText
-                android:id="@+id/et_first_name"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="First Name"
-                android:inputType="textPersonName"
-                android:padding="15dp"
-                android:background="@drawable/edit_text_top"/>
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
 
-            <EditText
-                android:id="@+id/et_last_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"
-                android:inputType="textPersonName"
-                android:padding="15dp"
-                android:background="@drawable/edit_text_middle"/>
+                tools:text="What is the date of your child's last well check up?" />
 
             <LinearLayout
+                android:id="@+id/layout_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@drawable/edit_text_middle">
 
                 <TextView
+                    android:id="@+id/tv_question_option"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:padding="15dp"
                     android:textSize="18sp"
                     android:gravity="center_vertical"
-                    android:text="Date Of Birth:"/>
+                    tools:text="Date:"/>
 
                 <TextView
                     android:id="@+id/tv_date"
@@ -107,87 +116,55 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/rg_group"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/edit_text_middle">
+                android:layout_gravity="start"
+                android:visibility="gone" >
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:padding="15dp"
-                    android:textSize="18sp"
-                    android:gravity="center_vertical"
-                    android:text="Gender:"/>
-
-                <TextView
-                    android:id="@+id/tv_gender"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:padding="15dp"
-                    android:textSize="16dp"
-                    android:gravity="center_vertical|center"
-                    tools:text="Male"/>
-
-                <ImageButton
-                    android:id="@+id/ib_gender"
-                    android:layout_width="0dp"
+                <RadioButton
+                    android:id="@+id/rb_option_one"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:padding="15dp"
-                    android:src="@drawable/ic_gender" />
+                    android:text="Yes"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/edit_text_bottom">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:gravity="center_vertical"
-                    android:padding="15dp"
-                    android:text="Diagnosis:"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/tv_diagnosis"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:textSize="16dp"
-                    android:gravity="center_vertical|center"
-                    tools:text="Down Syndrome"/>
-
-                <ImageButton
-                    android:id="@+id/ib_diagnosis"
-                    android:layout_width="0dp"
+                <RadioButton
+                    android:id="@+id/rb_option_two"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:padding="15dp"
-                    android:src="@drawable/ic_diagnosis" />
+                    android:text="No" />
 
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/rb_option_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't know"/>
+
+            </RadioGroup>
 
             <Button
-                android:id="@+id/bt_register_child"
+                android:id="@+id/bv_next_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Register child"
+                android:text="Next Question"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:textSize="16sp"
                 android:textAllCaps="true"
                 android:background="@drawable/button"/>
+
+            <Button
+                android:id="@+id/bv_go_to_medical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Go to medical questions"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:background="@drawable/button"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
