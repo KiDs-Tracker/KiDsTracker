@@ -1,19 +1,29 @@
 package com.example.kidstracker.ui.children;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ChildrenViewModel extends ViewModel {
+import com.example.kidstracker.models.Child;
 
-    private MutableLiveData<String> mText;
+import java.util.List;
 
-    public ChildrenViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is my children fragment");
+public class ChildrenViewModel extends AndroidViewModel {
+
+    private ChildrenRepository mChildrenRepository;
+    private LiveData<List<Child>> mListLiveData;
+
+    public ChildrenViewModel(@NonNull Application application) {
+        super(application);
+        mChildrenRepository = new ChildrenRepository(application);
+        mListLiveData = mChildrenRepository.getAllChildren();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Child>> getAllChildren() {
+        return mListLiveData;
     }
 }
