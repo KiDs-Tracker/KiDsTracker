@@ -108,9 +108,7 @@ public class MedicalQuestionsFragment extends Fragment {
                             break;
                     }
                     questionCounter++;
-                    mBinding.rbOptionOne.setChecked(false);
-                    mBinding.rbOptionTwo.setChecked(false);
-                    mBinding.rbOptionThree.setChecked(false);
+                    mBinding.rgGroup.clearCheck();
                     showNextQuestion(mMedicalQuestionList);
                 } else {
                     Toasty.error(getActivity(), "Please answer the question!" ,Toast.LENGTH_SHORT, true).show();
