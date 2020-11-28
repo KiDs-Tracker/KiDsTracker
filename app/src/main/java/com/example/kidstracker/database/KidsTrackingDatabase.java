@@ -46,28 +46,28 @@ public abstract class KidsTrackingDatabase extends RoomDatabase {
                                 @Override
                                 public void run() {
                                     MedicalQuestionDao medicalQuestionDao = getInstance(context).medicalQuestionDao();
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child had any prior surgeries?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with eye or vision problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with ear or hearing problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with neck or cervical spine (C-spine) problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with thyroid problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with heart problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with breathing problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with stomach or intestinal problems?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to sleep?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the brain?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the blood stream, read blood cells, white blood cells, platelets, or bone marrow?", "Yes", "No", "I don't know"));
-                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the immune system?", "Yes", "No", "I don't know"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child had any prior surgeries?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with eye or vision problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with ear or hearing problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with neck or cervical spine (C-spine) problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with thyroid problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with heart problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with breathing problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with stomach or intestinal problems?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to sleep?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the brain?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the blood stream, read blood cells, white blood cells, platelets, or bone marrow?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the immune system?"));
 
                                     RoutineScreeningQuestionDao routineScreeningQuestionDao = getInstance(context).routineScreeningQuestionDao();
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last well check up?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next well check up?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last hearing test?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("Is your child's hearing normal? (Were they able to pass their hearing test?)", "", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next hearing test?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last eye exam?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for low iron or anemia?", "Date:", "I don't know"));
-                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for thyroid problems?", "Date:", "I don't know"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last well check up?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next well check up?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last hearing test?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("Is your child's hearing normal? (Were they able to pass their hearing test?)"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's next hearing test?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last eye exam?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for low iron or anemia?"));
+                                    routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last blood test for thyroid problems?"));
 
                                 }
                             });
