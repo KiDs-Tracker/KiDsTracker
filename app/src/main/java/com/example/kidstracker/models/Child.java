@@ -18,7 +18,7 @@ public class Child implements Serializable {
 
     private String lastName;
 
-    private String dateOfBirth;
+    private int age;
 
     private int gender;
 
@@ -67,7 +67,7 @@ public class Child implements Serializable {
     @Ignore
     public Child(){}
 
-    public Child(String firstName, String lastName, String dateOfBirth, int gender,
+    public Child(String firstName, String lastName, int age, int gender,
                  int diagnosis, String baseWCC, String baseNextWCC, String baseHearing,
                  int baseHearingResult, String baseNextHearing, String baseVision,
                  String baseHGB, String baseTSH, int priorSurgeries, int priorEyeProblems,
@@ -77,7 +77,7 @@ public class Child implements Serializable {
                  int priorImmuneProblems) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
+        this.age = age;
         this.gender = gender;
         this.diagnosis = diagnosis;
         this.baseWCC = baseWCC;
@@ -100,15 +100,6 @@ public class Child implements Serializable {
         this.priorBrainProblems = priorBrainProblems;
         this.priorBloodProblems = priorBloodProblems;
         this.priorImmuneProblems = priorImmuneProblems;
-    }
-
-    @Ignore
-    public Child(String firstName, String lastName, String dateOfBirth, int gender, int diagnosis) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.diagnosis = diagnosis;
     }
 
     public int getId() {
@@ -135,12 +126,12 @@ public class Child implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public int getAge() {
+        return age;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getGender() {
