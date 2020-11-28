@@ -160,13 +160,12 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
         if (questionCounter < questionTotal) {
             currentQuestion = routineScreeningQuestions.get(questionCounter);
             mBinding.tvQuestion.setText(currentQuestion.getQuestion());
-            mBinding.tvQuestionOption.setText(currentQuestion.getOption1());
             mBinding.layoutDate.setVisibility(View.VISIBLE);
             mBinding.rgGroup.setVisibility(View.GONE);
             mBinding.pbQuestion.setProgress(questionCounter);
 
             if (questionCounter == 3) {
-                mBinding.layoutDate.setVisibility(View.INVISIBLE);
+                mBinding.layoutDate.setVisibility(View.GONE);
                 mBinding.rgGroup.setVisibility(View.VISIBLE);
                 mBinding.pbQuestion.setProgress(questionCounter);
             }
