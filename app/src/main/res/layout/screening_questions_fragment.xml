@@ -93,7 +93,7 @@
                     android:padding="15dp"
                     android:textSize="18sp"
                     android:gravity="center_vertical"
-                    tools:text="Date:"/>
+                    android:text="Date:"/>
 
                 <TextView
                     android:id="@+id/tv_date"
