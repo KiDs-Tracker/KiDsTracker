@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +46,8 @@ public class LoginFragment extends Fragment {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false);
         View root = mBinding.getRoot();
 
+        checkCheckBoxState();
+
         mBinding.bvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +70,14 @@ public class LoginFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void checkCheckBoxState() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean checkboxState = sharedPreferences.getBoolean("checkbox", false);
+        if (checkboxState) {
+            startActivity(new Intent(getActivity(), HomeActivity.class));
+        }
     }
 
     private void goToForgotPasswordFragment() {
@@ -101,8 +113,8 @@ public class LoginFragment extends Fragment {
             public void run() {
                 User user = mViewModel.getUser(username, password);
                 if (user != null) {
+                    rememberLoginState(username);
                     Intent homeIntent = new Intent(getContext(), HomeActivity.class);
-                    homeIntent.putExtra("User", user);
                     startActivity(homeIntent);
                 } else {
 
@@ -116,6 +128,16 @@ public class LoginFragment extends Fragment {
                 }
             }
         });
+    }
+
+    private void rememberLoginState(String userName) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("userName", userName);
+        if (mBinding.cbRemember.isChecked()) {
+            editor.putBoolean("checkbox", true);
+        }
+        editor.apply();
     }
 
 }
