@@ -22,8 +22,6 @@ import es.dmoral.toasty.Toasty;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -60,13 +58,12 @@ public class HomeFragment extends Fragment {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        //editor.putBoolean("firstStart", false);
-        //editor.apply();
+        editor.putBoolean("firstStart", false);
+        editor.apply();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
     }
 }

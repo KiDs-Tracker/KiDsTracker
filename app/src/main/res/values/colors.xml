@@ -17,4 +17,35 @@
     <color name="primary_dark">#12475D</color>
     <color name="secondary">#EDB660</color>
     <color name="secondary_dark">#F47D4F</color>
+
+
+    <!-- Color for a priority between 0 and 2 -->
+    <color name="priority1">#4A7BA7</color>
+
+    <!-- Color for a priority between 2 and 3 -->
+    <color name="priority2">#04B4B3</color>
+
+    <!-- Color for a priority between 3 and 4 -->
+    <color name="priority3">#10CAC9</color>
+
+    <!-- Color for a priority between 4 and 5 -->
+    <color name="priority4">#F5A623</color>
+
+    <!-- Color for a priority between 5 and 6 -->
+    <color name="priority5">#FF7D50</color>
+
+    <!--Color for a priority between 6 and 7 -->
+    <color name="priority6">#FC6644</color>
+
+    <!-- Color for a priority between 7 and 8 -->
+    <color name="priority7">#E75F40</color>
+
+    <!-- Color for a priority between 8 and 9 -->
+    <color name="priority8">#E13A20</color>
+
+    <!--Color for a priority between 9 and 10 -->
+    <color name="priority9">#D93218</color>
+
+    <!-- Color for a priority over 10 -->
+    <color name="priority10plus">#C03823</color>
 </resources>

@@ -24,34 +24,21 @@
             android:progress="0" />
 
         <TextView
-            android:id="@+id/tv_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="KiDs-Tracker"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/tv_register_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="Medical Questions"
+            android:fontFamily="@font/museo_sans_rounded700"
             android:gravity="center"
             android:textColor="@android:color/black"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_logo" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,6 +62,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/museo_sans_rounded700"
                 tools:text="Has your child had any prior surgeries?"/>
 
             <RadioGroup
@@ -87,18 +75,21 @@
                     android:id="@+id/rb_option_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/museo_slab700"
                     android:text="Yes"/>
 
                 <RadioButton
                     android:id="@+id/rb_option_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/museo_slab700"
                     android:text="No" />
 
                 <RadioButton
                     android:id="@+id/rb_option_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/museo_slab700"
                     android:text="Don't know"/>
 
             </RadioGroup>
@@ -109,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Next Question"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:textSize="16sp"
                 android:textAllCaps="true"
@@ -120,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Go back home"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:textSize="16sp"
                 android:textAllCaps="true"

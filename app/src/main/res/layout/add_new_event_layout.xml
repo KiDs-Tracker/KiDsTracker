@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Type Events"
+        android:fontFamily="@font/museo_slab700"
         android:inputType="textShortMessage"
         android:layout_margin="20dp"
         android:gravity="center"/>
@@ -19,8 +20,8 @@
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/set_event_time"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_baseline_timer_24"/>
@@ -29,7 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00 AM"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:textSize="30sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -41,10 +44,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alarm Me"
+                android:fontFamily="@font/museo_slab700"
                 android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:buttonTint="@android:color/black"
-                android:textColor="@android:color/black"/>
+                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
     <Button
@@ -52,11 +54,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Event"
+        android:fontFamily="@font/museo_sans_rounded700"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textColor="@color/black"/>
+        android:textAllCaps="false" />
 
 
 
