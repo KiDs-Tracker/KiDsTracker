@@ -21,6 +21,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="Date"
+                android:fontFamily="@font/museo_sans_rounded300"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
             <TextView
@@ -30,6 +31,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="Event"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:textSize="40sp"
                 android:textStyle="bold"/>
             <TextView
@@ -39,6 +41,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="Time"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -54,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Delete"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:textAllCaps="false"
                 android:layout_margin="10dp"/>
 

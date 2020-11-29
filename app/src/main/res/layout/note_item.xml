@@ -1,46 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Title"
+                android:fontFamily="@font/museo_sans_rounded700"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/museo_slab700"
+                tools:text="Description"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_priority"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/museo_sans_rounded700"
+            android:background="@drawable/priority_circle"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            tools:text="10"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:maxLines="1"
-            android:layout_toStartOf="@id/tv_priority"
-            android:layout_toLeftOf="@id/tv_priority"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:ellipsize="end"/>
-
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_title"
-            android:text="Description"/>
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
