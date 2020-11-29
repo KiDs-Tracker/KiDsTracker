@@ -65,4 +65,10 @@
         android:label="Medical Questions"
         tools:layout="@layout/medical_questions_fragment" />
 
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.kidstracker.ui.settings.settingsabout.SettingsAboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_settings_about" />
+
 </navigation>
