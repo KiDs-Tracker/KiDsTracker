@@ -20,6 +20,8 @@ import com.example.kidstracker.R;
 import com.example.kidstracker.databinding.FragmentAddNotesBinding;
 import com.example.kidstracker.models.Note;
 
+import es.dmoral.toasty.Toasty;
+
 public class AddNotesFragment extends Fragment {
 
     private FragmentAddNotesBinding mBinding;
@@ -78,7 +80,7 @@ public class AddNotesFragment extends Fragment {
         int priority = mBinding.npPriority.getValue();
 
         if (title.trim().isEmpty() || description.trim().isEmpty()) {
-            Toast.makeText(getContext(), "Please insert a title and description", Toast.LENGTH_SHORT).show();
+            Toasty.error(getContext(), "Please insert a title and/or description", Toast.LENGTH_SHORT, true).show();
             return;
         }
 
