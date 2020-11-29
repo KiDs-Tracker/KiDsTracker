@@ -1,11 +1,14 @@
 package com.example.kidstracker.adapters;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,6 +53,46 @@ public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteViewHolder> {
         holder.mTitleTextView.setText(note.getTitle());
         holder.mDescriptionTextView.setText(note.getDescription());
         holder.mPriorityTextView.setText(String.valueOf(note.getPriority()));
+        GradientDrawable gradientDrawable = (GradientDrawable) holder.mPriorityTextView.getBackground();
+        gradientDrawable.setColor(getColor(note));
+
+    }
+
+    private int getColor(Note note) {
+        int priorityColorId = 0;
+        switch (note.getPriority()) {
+            case 1:
+                priorityColorId = R.color.priority1;
+                break;
+            case 2:
+                priorityColorId = R.color.priority2;
+                break;
+            case 3:
+                priorityColorId = R.color.priority3;
+                break;
+            case 4:
+                priorityColorId = R.color.priority4;
+                break;
+            case 5:
+                priorityColorId = R.color.priority5;
+                break;
+            case 6:
+                priorityColorId = R.color.priority6;
+                break;
+            case 7:
+                priorityColorId = R.color.priority7;
+                break;
+            case 8:
+                priorityColorId = R.color.priority8;
+                break;
+            case 9:
+                priorityColorId = R.color.priority9;
+                break;
+            case 10:
+                priorityColorId = R.color.priority10plus;
+                break;
+        }
+        return priorityColorId;
     }
 
     public Note getNoteAt(int position) {
