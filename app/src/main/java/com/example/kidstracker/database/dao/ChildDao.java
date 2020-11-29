@@ -2,6 +2,7 @@ package com.example.kidstracker.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -17,4 +18,10 @@ public interface ChildDao {
 
     @Query("SELECT * FROM child")
     LiveData<List<Child>> getAllChildren();
+
+    @Query("DELETE FROM child")
+    void deleteAllChildren();
+
+    @Delete
+    void deleteChild(Child child);
 }
