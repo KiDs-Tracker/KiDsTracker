@@ -26,4 +26,12 @@ public class ChildrenViewModel extends AndroidViewModel {
     public LiveData<List<Child>> getAllChildren() {
         return mListLiveData;
     }
+
+    public void deleteAllChildren() {
+        mChildrenRepository.deleteAllChildren();
+    }
+
+    public void deleteChild(Child child) {
+        mChildrenRepository.deleteChild(child);
+    }
 }
