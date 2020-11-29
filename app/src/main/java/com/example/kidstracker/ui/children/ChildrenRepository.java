@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.kidstracker.database.AppExecutors;
 import com.example.kidstracker.database.KidsTrackingDatabase;
 import com.example.kidstracker.database.dao.ChildDao;
 import com.example.kidstracker.models.Child;
@@ -23,5 +24,23 @@ public class ChildrenRepository {
 
     public LiveData<List<Child>> getAllChildren() {
         return  mListLiveData;
+    }
+
+    public void deleteAllChildren() {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                mChildDao.deleteAllChildren();
+            }
+        });
+    }
+
+    public void deleteChild(Child child) {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                mChildDao.deleteChild(child);
+            }
+        });
     }
 }

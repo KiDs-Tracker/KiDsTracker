@@ -27,6 +27,8 @@ import com.example.kidstracker.models.Note;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
+
 public class NotesFragment extends Fragment {
 
     private NotesViewModel mViewModel;
@@ -68,7 +70,7 @@ public class NotesFragment extends Fragment {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 mViewModel.delete(mAdapter.getNoteAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(getContext(), "Note deleted", Toast.LENGTH_SHORT).show();
+                Toasty.success(getContext(), "Note deleted", Toast.LENGTH_SHORT, true).show();
             }
         }).attachToRecyclerView(mBinding.rvNotes);
 
@@ -105,7 +107,7 @@ public class NotesFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.delete_all_notes:
                 mViewModel.deleteAllNotes();
-                Toast.makeText(getContext(), "All notes deleted", Toast.LENGTH_SHORT).show();
+                Toasty.success(getContext(), "All notes deleted", Toast.LENGTH_SHORT, true).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

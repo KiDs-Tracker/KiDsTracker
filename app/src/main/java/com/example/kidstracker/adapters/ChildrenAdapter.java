@@ -32,6 +32,8 @@ public class ChildrenAdapter extends RecyclerView.Adapter<ChildrenAdapter.Childr
         this.mChildList = mChildList;
     }
 
+    public ChildrenAdapter() {}
+
     @NonNull
     @Override
     public ChildrenViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -63,6 +65,10 @@ public class ChildrenAdapter extends RecyclerView.Adapter<ChildrenAdapter.Childr
     @Override
     public int getItemCount() {
         return mChildList.size();
+    }
+
+    public Child getChildAt(int position) {
+        return  mChildList.get(position);
     }
 
     public class ChildrenViewHolder extends RecyclerView.ViewHolder {
