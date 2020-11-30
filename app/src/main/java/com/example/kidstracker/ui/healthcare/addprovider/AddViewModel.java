@@ -13,12 +13,14 @@ public class AddViewModel extends AndroidViewModel {
 
     public AddViewModel(@NonNull Application application) {
         super(application);
-
         addProviderRepository = new AddProviderRepository(application);
-
     }
 
     public void insertProvider(Provider provider){
         addProviderRepository.insertProvider(provider);
+    }
+
+    public void updateProvider(Provider provider) {
+        addProviderRepository.updateProvider(provider);
     }
 }
