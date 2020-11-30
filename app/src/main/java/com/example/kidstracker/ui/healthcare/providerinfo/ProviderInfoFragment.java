@@ -21,7 +21,6 @@ import com.squareup.picasso.Picasso;
 
 public class ProviderInfoFragment extends Fragment {
 
-    private ProviderInfoViewModel mViewModel;
     private ProviderInfoFragmentBinding mBinding;
     private Provider mProvider;
 
@@ -115,12 +114,6 @@ public class ProviderInfoFragment extends Fragment {
                 Picasso.get().load(R.drawable.female_doctor).into(mBinding.ivGender);
                 break;
         }
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ProviderInfoViewModel.class);
     }
 
 }
