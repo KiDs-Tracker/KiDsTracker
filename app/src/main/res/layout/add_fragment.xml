@@ -20,9 +20,10 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:text="Add Provider"
-            android:textColor="@android:color/black"
             android:textSize="40sp"
             android:textStyle="bold"
+            android:fontFamily="@font/museo_sans_rounded700"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Provider's Name"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textPersonName"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_top" />
@@ -53,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Patient's Name"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textPersonName"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle" />
@@ -62,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Provider's Number"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="number"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle" />
@@ -71,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Facility Location"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textPostalAddress"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle" />
@@ -136,6 +141,8 @@
                     android:layout_weight="2"
                     android:padding="15dp"
                     android:textSize="16dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:fontFamily="@font/museo_slab300"
                     android:gravity="center_vertical|center"
                     tools:text="cardiologist" />
