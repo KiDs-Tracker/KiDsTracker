@@ -77,4 +77,10 @@
         android:label="Add Provider"
         tools:layout="@layout/add_fragment" />
 
+    <fragment
+        android:id="@+id/nav_provider_info"
+        android:name="com.example.kidstracker.ui.healthcare.providerinfo.ProviderInfoFragment"
+        android:label="Provider's Information"
+        tools:layout="@layout/provider_info_fragment" />
+
 </navigation>
