@@ -3,6 +3,8 @@ package com.example.kidstracker.ui.healthcare.providerinfo;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -43,8 +45,35 @@ public class ProviderInfoFragment extends Fragment {
                 Navigation.findNavController(getView()).navigate(R.id.nav_add_provider, bundle);
             }
         });
+        
+        onPhoneNumberClick();
+        onAddressClick();
 
         return root;
+    }
+
+    private void onAddressClick() {
+        mBinding.tvPhysicianLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + mProvider.getLocation());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+    }
+
+    private void onPhoneNumberClick() {
+        mBinding.tvPhysicianNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = "tel:" + mProvider.getNumber().trim();
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
     }
 
     private void setProviderInfo() {
