@@ -21,14 +21,20 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.Provid
 
     private Context context;
     private List<Provider> providerList;
+    private ProviderClickListener providerClickListener;
+
+    public interface ProviderClickListener {
+        void onProviderClick(Provider provider);
+    }
 
     public ProviderAdapter(){
 
     }
 
-    public ProviderAdapter(Context context, List<Provider> providerList) {
+    public ProviderAdapter(Context context, List<Provider> providerList, ProviderClickListener providerClickListener) {
         this.context = context;
         this.providerList = providerList;
+        this.providerClickListener = providerClickListener;
     }
 
     @NonNull
@@ -107,7 +113,11 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.Provid
         return providerList.size();
     }
 
-    public class ProviderViewHolder extends RecyclerView.ViewHolder {
+    public Provider getProviderAt(int position) {
+        return providerList.get(position);
+    }
+
+    public class ProviderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView imageView;
         private TextView physicianNameTextView;
@@ -121,7 +131,14 @@ public class ProviderAdapter extends RecyclerView.Adapter<ProviderAdapter.Provid
             physicianNameTextView = itemView.findViewById(R.id.tv_physician_name);
             occupationTextView = itemView.findViewById(R.id.tv_physician_occupation);
             patientNameTextView = itemView.findViewById(R.id.tv_patient);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Provider provider = providerList.get(position);
+            providerClickListener.onProviderClick(provider);
         }
     }
 }
