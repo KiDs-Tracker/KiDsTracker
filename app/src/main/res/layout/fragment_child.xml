@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.children.ChildrenFragment">
-
+<!--include: inclusive gender options. Possibly avatars for gender and age group?-->
     <TextView
         android:id="@+id/USER_NAME"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="181dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
+        android:background="@drawable/boarder"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
         android:text="CHILD NAME"
-        android:background="@drawable/boarder"
-        android:textStyle="bold"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="View Your Checklist!"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -113,6 +114,7 @@
         android:layout_marginLeft="152dp"
         android:layout_marginTop="36dp"
         android:text="Edit Profile"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -135,7 +137,7 @@
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="231dp"
         android:layout_height="43dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="260dp"
         android:background="@drawable/text_entry_border"
         android:ems="10"
         android:foregroundGravity="center_vertical|center_horizontal"
@@ -143,7 +145,7 @@
         android:inputType="textMultiLine"
         android:text="NEOSPORIN, MUCINEX, PAROXITINE , NOXEMA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/USER_NAME" />
 
@@ -155,7 +157,9 @@
         android:ems="10"
         android:gravity="center_vertical|center_horizontal"
         android:inputType="textPersonName"
-        android:text="UPCOMING"
+        android:background="@color/purple_500"
+        android:textStyle="bold"
+        android:text="UPCOMING EVENTS"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -164,7 +168,7 @@
         android:id="@+id/editTextTextMultiLine2"
         android:layout_width="264dp"
         android:layout_height="133dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/text_entry_border"
         android:ems="10"
         android:foregroundGravity="center_horizontal"
@@ -174,4 +178,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
