@@ -12,16 +12,18 @@ import com.example.kidstracker.database.dao.ChildDao;
 import com.example.kidstracker.database.dao.EventDao;
 import com.example.kidstracker.database.dao.MedicalQuestionDao;
 import com.example.kidstracker.database.dao.NoteDao;
+import com.example.kidstracker.database.dao.ProviderDao;
 import com.example.kidstracker.database.dao.RoutineScreeningQuestionDao;
 import com.example.kidstracker.database.dao.UserDao;
 import com.example.kidstracker.models.Child;
 import com.example.kidstracker.models.Events;
 import com.example.kidstracker.models.MedicalQuestion;
 import com.example.kidstracker.models.Note;
+import com.example.kidstracker.models.Provider;
 import com.example.kidstracker.models.RoutineScreeningQuestion;
 import com.example.kidstracker.models.User;
 
-@Database(entities = {Note.class, Events.class, User.class, MedicalQuestion.class, RoutineScreeningQuestion.class, Child.class}, version = 8)
+@Database(entities = {Note.class, Events.class, User.class, MedicalQuestion.class, RoutineScreeningQuestion.class, Child.class, Provider.class}, version = 9)
 public abstract class KidsTrackingDatabase extends RoomDatabase {
 
     private static KidsTrackingDatabase instance;
@@ -32,6 +34,7 @@ public abstract class KidsTrackingDatabase extends RoomDatabase {
     public abstract MedicalQuestionDao medicalQuestionDao();
     public abstract RoutineScreeningQuestionDao routineScreeningQuestionDao();
     public abstract ChildDao childDao();
+    public abstract ProviderDao providerDao();
 
     public static synchronized KidsTrackingDatabase getInstance(Context context) {
         if (instance == null) {
