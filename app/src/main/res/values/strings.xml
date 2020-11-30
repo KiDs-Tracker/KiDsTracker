@@ -29,6 +29,27 @@
         <item>Down Syndrome</item>
     </string-array>
 
+    <!-- Array list of providers -->
+    <string-array name="providers_list">
+        <item>Cardiologist</item>
+        <item>Neurologist</item>
+        <item>Dentist</item>
+        <item>Optometrist</item>
+        <item>Ophthalmologist</item>
+        <item>Otolaryngologist</item>
+        <item>Pulmonologist</item>
+        <item>Surgeon</item>
+        <item>Primary Care Doctor</item>
+        <item>Orthopedist</item>
+        <item>Gastroenterologist</item>
+
+
+
+
+
+
+    </string-array>
+
     <!-- Labels -->
     <string name="diagnosis_label"><u>Diagnosis</u></string>
 
