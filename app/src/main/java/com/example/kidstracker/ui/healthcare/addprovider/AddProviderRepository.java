@@ -25,4 +25,13 @@ public class AddProviderRepository {
             }
         });
     }
+
+    public void updateProvider(Provider provider) {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                providerDao.updateProvider(provider);
+            }
+        });
+    }
 }

@@ -5,7 +5,9 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
+import com.example.kidstracker.models.Note;
 import com.example.kidstracker.models.Provider;
 
 import java.util.List;
@@ -15,11 +17,16 @@ public interface ProviderDao {
 
     @Insert
     void insertProvider(Provider provider);
+
     @Delete
     void deleteProvider(Provider provider);
+
     @Query("SELECT * FROM provider")
     LiveData<List<Provider>> getAllProviders();
+
     @Query("DELETE FROM provider")
     void deleteAllProviders();
 
+    @Update
+    void updateProvider(Provider provider);
 }

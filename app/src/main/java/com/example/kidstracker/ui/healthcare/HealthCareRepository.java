@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.kidstracker.database.AppExecutors;
 import com.example.kidstracker.database.KidsTrackingDatabase;
 import com.example.kidstracker.database.dao.ProviderDao;
 import com.example.kidstracker.models.Provider;
@@ -24,5 +25,23 @@ public class HealthCareRepository {
 
     public LiveData<List<Provider>> getAllProviders(){
         return listLiveData;
+    }
+
+    public void deleteProvider(Provider provider) {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                providerDao.deleteProvider(provider);
+            }
+        });
+    }
+
+    public void deleteAllProviders() {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                providerDao.deleteAllProviders();
+            }
+        });
     }
 }

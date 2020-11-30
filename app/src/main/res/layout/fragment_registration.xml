@@ -13,32 +13,19 @@
         tools:context=".ui.registration.RegistrationFragment">
 
         <TextView
-            android:id="@+id/tv_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:text="KiDs-Tracker"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/tv_register_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="Register"
+            android:fontFamily="@font/museo_sans_rounded700"
             android:textColor="@android:color/black"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_logo" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textPersonName"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_top"/>
@@ -67,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle"/>
@@ -76,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:fontFamily="@font/museo_slab700"
                 android:inputType="textPassword"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle"/>
@@ -86,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
+                android:fontFamily="@font/museo_slab700"
                 android:padding="15dp"
                 android:background="@drawable/edit_text_middle"/>
 
@@ -94,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/museo_sans_rounded700"
                 android:text="Sign Up"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:textSize="16sp"
@@ -105,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/museo_slab300"
                 android:padding="10dp"
                 android:text="Already have an account?"
                 android:textAllCaps="true"

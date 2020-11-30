@@ -21,9 +21,17 @@ public class HealthCareViewModel extends AndroidViewModel {
         super(application);
         healthCareRepository = new HealthCareRepository(application);
         listLiveData = healthCareRepository.getAllProviders();
-
     }
+
     public LiveData<List<Provider>> getAllProviders(){
         return listLiveData;
+    }
+
+    public void deleteProvider(Provider provider) {
+        healthCareRepository.deleteProvider(provider);
+    }
+
+    public void deleteAllProviders() {
+        healthCareRepository.deleteAllProviders();
     }
 }
