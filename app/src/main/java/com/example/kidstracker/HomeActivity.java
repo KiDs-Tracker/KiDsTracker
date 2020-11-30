@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 int id = destination.getId();
-                if (id == R.id.nav_child_registration || id == R.id.nav_add_notes || id == R.id.nav_child_screening || id == R.id.nav_child_medical || id == R.id.nav_settings || id == R.id.nav_about) {
+                if (id == R.id.nav_child_registration || id == R.id.nav_add_notes || id == R.id.nav_child_screening || id == R.id.nav_child_medical || id == R.id.nav_settings || id == R.id.nav_about || id == R.id.nav_add_provider) {
                     bottomNavigationView.setVisibility(View.INVISIBLE);
                 } else if (!(id == R.id.nav_calendar) && !(id == R.id.nav_notes)) {
                     bottomNavigationView.getMenu().getItem(0).setCheckable(false);
