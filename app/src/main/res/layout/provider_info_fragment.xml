@@ -179,6 +179,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/primary"
                     android:fontFamily="@font/museo_slab300"
                     android:gravity="center_vertical"
                     android:text="2140 Alta St. Los Angeles CA" />
@@ -188,6 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/primary"
                     android:fontFamily="@font/museo_slab300"
                     android:gravity="center_vertical"
                     android:text="323-621-7837" />
