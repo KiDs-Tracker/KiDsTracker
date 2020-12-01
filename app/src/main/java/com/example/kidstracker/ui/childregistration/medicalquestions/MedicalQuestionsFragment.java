@@ -68,7 +68,7 @@ public class MedicalQuestionsFragment extends Fragment {
         mBinding.bvNextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mBinding.rbOptionOne.isChecked() || mBinding.rbOptionTwo.isChecked() || mBinding.rbOptionThree.isChecked()) {
+                if (mBinding.rbOptionOne.isChecked() || mBinding.rbOptionTwo.isChecked() || mBinding.rbOptionThree.isChecked()||!(mBinding.etMedications.getText().toString().isEmpty())) {
                     switch(questionCounter) {
                         case 0:
                             mChild.setPriorSurgeries(getOptionChoice());
@@ -106,6 +106,12 @@ public class MedicalQuestionsFragment extends Fragment {
                         case 11:
                             mChild.setPriorImmuneProblems(getOptionChoice());
                             break;
+                        case 12:
+                            mChild.setMedications(mBinding.etMedications.getText().toString().trim());
+                            break;
+
+
+
                     }
                     questionCounter++;
                     mBinding.rgGroup.clearCheck();
@@ -151,17 +157,30 @@ public class MedicalQuestionsFragment extends Fragment {
     }
 
     private void showNextQuestion(List<MedicalQuestion> medicalQuestions) {
-        if (questionCounter < questionTotal) {
+        if (questionCounter < questionTotal && !(questionCounter == 12)) {
             currentQuestion = medicalQuestions.get(questionCounter);
             mBinding.tvQuestion.setText(currentQuestion.getQuestion());
             mBinding.pbQuestion.setProgress(questionCounter);
-        } else {
+
+        }
+        else if(questionCounter == 12) {
+            mBinding.etMedications.setVisibility(View.VISIBLE);
+            mBinding.rgGroup.setVisibility(View.GONE);
+            currentQuestion = medicalQuestions.get(questionCounter);
+            mBinding.tvQuestion.setText(currentQuestion.getQuestion());
+            mBinding.pbQuestion.setProgress(questionCounter);
+
+
+
+        }
+        else {
             Toasty.success(getActivity(), "All questions answered!", Toast.LENGTH_SHORT, true).show();
             mBinding.tvQuestion.setVisibility(View.GONE);
             mBinding.bvNextQuestion.setVisibility(View.GONE);
             mBinding.rgGroup.setVisibility(View.GONE);
             mBinding.bvGoToHome.setVisibility(View.VISIBLE);
-            mBinding.pbQuestion.setProgress(12);
+            mBinding.pbQuestion.setProgress(13);
+            mBinding.etMedications.setVisibility(View.GONE);
             /*Log.d(TAG, "showNextQuestion: " + "\n" +
                     mChild.getPriorSurgeries() + "\n" +
                     mChild.getPriorEyeProblems() + "\n" +

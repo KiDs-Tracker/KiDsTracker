@@ -23,7 +23,7 @@ import com.example.kidstracker.models.Provider;
 import com.example.kidstracker.models.RoutineScreeningQuestion;
 import com.example.kidstracker.models.User;
 
-@Database(entities = {Note.class, Events.class, User.class, MedicalQuestion.class, RoutineScreeningQuestion.class, Child.class, Provider.class}, version = 9)
+@Database(entities = {Note.class, Events.class, User.class, MedicalQuestion.class, RoutineScreeningQuestion.class, Child.class, Provider.class}, version = 10)
 public abstract class KidsTrackingDatabase extends RoomDatabase {
 
     private static KidsTrackingDatabase instance;
@@ -61,6 +61,7 @@ public abstract class KidsTrackingDatabase extends RoomDatabase {
                                     medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the brain?"));
                                     medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the blood stream, read blood cells, white blood cells, platelets, or bone marrow?"));
                                     medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("Has your child ever been diagnosed with problems related to the immune system?"));
+                                    medicalQuestionDao.insertMedicalQuestion(new MedicalQuestion("What medications is your child taking?"));
 
                                     RoutineScreeningQuestionDao routineScreeningQuestionDao = getInstance(context).routineScreeningQuestionDao();
                                     routineScreeningQuestionDao.insertRoutineScreeningQuestion(new RoutineScreeningQuestion("What is the date of your child's last well check up?"));
