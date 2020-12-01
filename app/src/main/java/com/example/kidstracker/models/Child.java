@@ -64,6 +64,8 @@ public class Child implements Serializable {
 
     private int priorImmuneProblems;
 
+    private String medications;
+
     @Ignore
     public Child(){}
 
@@ -74,7 +76,7 @@ public class Child implements Serializable {
                  int priorHearingProblems, int priorNeckProblems, int priorThyroidProblems,
                  int priorHeartProblems, int priorBreathingProblems, int priorConstipationProblems,
                  int priorSleepingProblems, int priorBrainProblems, int priorBloodProblems,
-                 int priorImmuneProblems) {
+                 int priorImmuneProblems,String medications ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -100,6 +102,7 @@ public class Child implements Serializable {
         this.priorBrainProblems = priorBrainProblems;
         this.priorBloodProblems = priorBloodProblems;
         this.priorImmuneProblems = priorImmuneProblems;
+        this.medications = medications;
     }
 
     public int getId() {
@@ -308,5 +311,13 @@ public class Child implements Serializable {
 
     public void setPriorImmuneProblems(int priorImmuneProblems) {
         this.priorImmuneProblems = priorImmuneProblems;
+    }
+
+    public String getMedications() {
+        return medications;
+    }
+
+    public void setMedications(String medications) {
+        this.medications = medications;
     }
 }

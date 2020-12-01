@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.children.child.ChildFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_male" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="CHRIS"
+                    android:textStyle="bold"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xx/xx/xxxx"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="MEDICATIONS:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="GENDER:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Last Well Check Up:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Next Well Check Up:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Last Hearing Test"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Next Hearing Test"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Hearing Test Result:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Last Eye Exam:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Last Blood Test for Low Iron or Anemia:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Last Blood Test for Thyroid Problems:"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Prior Surgeries?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Eye Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Hearing Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Neck Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Thyroid Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Heart Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Breathing Problems?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Problems With Diarrhea or Constipation?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Problems Related to the Brain?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any problems Related to the Blood Stream?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Any Problems Related to the Immune System?"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_sans_rounded700" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="mucinex, adderall"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="MALE"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/12/2020"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Yes"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="No"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="None"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="No"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Yes"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Yes"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="No"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="No"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Yes"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Yes"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="No"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/museo_slab300" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_add" />
+    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
