@@ -27,8 +27,13 @@ import com.example.kidstracker.models.Child;
 import com.example.kidstracker.models.RoutineScreeningQuestion;
 import com.example.kidstracker.ui.childregistration.ChildRegistrationFragment;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Observable;
 
 import es.dmoral.toasty.Toasty;
@@ -46,6 +51,7 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
     private int questionCounter;
     private int questionTotal;
     private RoutineScreeningQuestion currentQuestion;
+    String dateOfficial = "";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -82,19 +88,36 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
             @Override
             public void onClick(View v) {
                 String answer = mBinding.tvDate.getText().toString().trim();
-                if (!answer.isEmpty() || (mBinding.rbOptionOne.isChecked() || mBinding.rbOptionTwo.isChecked() || mBinding.rbOptionThree.isChecked())) {
-                    switch(questionCounter) {
+                if (mBinding.rbOptionOne.isChecked() || mBinding.rbOptionTwo.isChecked() || mBinding.rbOptionThree.isChecked() || answer.isEmpty() || !answer.isEmpty()) {
+                    switch (questionCounter) {
                         case 0:
-                            mChild.setBaseWCC(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseWCC(dateOfficial);
+                            } else {
+                                mChild.setBaseWCC("");
+                                Log.d(TAG, "onClick: " + mChild.getBaseWCC());
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 1:
-                            mChild.setBaseNextWCC(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseNextWCC(dateOfficial);
+                            } else {
+                                mChild.setBaseNextWCC("");
+                                Log.d(TAG, "onClick: " + mChild.getBaseNextWCC());
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 2:
-                            mChild.setBaseHearing(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseHearing(dateOfficial);
+                            } else {
+                                mChild.setBaseHearing("");
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 3:
                             int selectedId = mBinding.rgGroup.getCheckedRadioButtonId();
@@ -115,26 +138,46 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
                             }
                             break;
                         case 4:
-                            mChild.setBaseNextHearing(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseNextHearing(dateOfficial);
+                            } else {
+                                mChild.setBaseNextHearing("");
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 5:
-                            mChild.setBaseVision(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseVision(dateOfficial);
+                            } else {
+                                mChild.setBaseVision("");
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 6:
-                            mChild.setBaseHGB(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseHGB(dateOfficial);
+                            } else {
+                                mChild.setBaseHGB("");
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                         case 7:
-                            mChild.setBaseTSH(mBinding.tvDate.getText().toString().trim());
+                            if (!dateOfficial.isEmpty()) {
+                                mChild.setBaseTSH(dateOfficial);
+                            } else {
+                                mChild.setBaseTSH("");
+                            }
                             mBinding.tvDate.setText("");
+                            dateOfficial = "";
                             break;
                     }
                     questionCounter++;
                     showNextQuestion(mRoutineScreeningQuestionList);
                 } else {
-                    Toasty.error(getActivity(), "Please answer the question!" ,Toast.LENGTH_SHORT, true).show();
+                    Toasty.error(getActivity(), "Please choose an option", Toasty.LENGTH_SHORT, true).show();
                 }
             }
         });
@@ -163,11 +206,13 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
             mBinding.layoutDate.setVisibility(View.VISIBLE);
             mBinding.rgGroup.setVisibility(View.GONE);
             mBinding.pbQuestion.setProgress(questionCounter);
+            mBinding.tvBlank.setVisibility(View.VISIBLE);
 
             if (questionCounter == 3) {
                 mBinding.layoutDate.setVisibility(View.GONE);
                 mBinding.rgGroup.setVisibility(View.VISIBLE);
                 mBinding.pbQuestion.setProgress(questionCounter);
+                mBinding.tvBlank.setVisibility(View.GONE);
             }
 
 
@@ -177,6 +222,7 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
             mBinding.layoutDate.setVisibility(View.GONE);
             mBinding.bvNextQuestion.setVisibility(View.GONE);
             mBinding.bvGoToMedical.setVisibility(View.VISIBLE);
+            mBinding.tvBlank.setVisibility(View.GONE);
             mBinding.pbQuestion.setProgress(8);
             Log.d(TAG, "showNextQuestion: " + mChild.getBaseWCC() + mChild.getBaseNextWCC() + mChild.getBaseHearing() + mChild.getBaseHearingResult() + mChild.getBaseNextHearing() + mChild.getBaseVision() + mChild.getBaseHGB() + mChild.getBaseTSH());
         }
@@ -188,7 +234,7 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("child", mChild);
-                Navigation.findNavController(getView()).navigate(R.id.nav_child_medical , bundle);
+                Navigation.findNavController(getView()).navigate(R.id.nav_child_medical, bundle);
             }
         });
     }
@@ -199,5 +245,7 @@ public class ScreeningQuestionsFragment extends Fragment implements DatePickerDi
         int Month = month + 1;
         String date = Month + "/" + dayOfMonth + "/" + year;
         mBinding.tvDate.setText(date);
+
+        dateOfficial = dayOfMonth + "/" + Month + "/" + year;
     }
 }
