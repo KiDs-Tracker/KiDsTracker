@@ -96,6 +96,24 @@
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/tv_additional_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Enter Additional Information"
+                android:fontFamily="@font/museo_slab700" />
+
+            <EditText
+                android:id="@+id/et_additional_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Enter here"
+                android:fontFamily="@font/museo_slab300"
+                android:padding="15dp"
+                android:background="@drawable/edit_text_all" />
+
             <EditText
                 android:id="@+id/et_medications"
                 android:layout_width="match_parent"

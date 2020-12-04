@@ -132,7 +132,7 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/museo_slab700"
                     android:gravity="center_vertical"
-                    android:text="Occupation:" />
+                    android:text="Specialty:" />
 
                 <TextView
                     android:id="@+id/tv_provider"
