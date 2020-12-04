@@ -24,6 +24,13 @@
         <item>Female</item>
     </string-array>
 
+    <!-- Array list of choices -->
+    <string-array name="choice_list">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Don\'t Know</item>
+    </string-array>
+
     <!-- Array list of diagnosis -->
     <string-array name="diagnosis_list">
         <item>Down Syndrome</item>
@@ -44,13 +51,31 @@
         <item>Gastroenterologist</item>
 
 
-
-
-
-
     </string-array>
 
     <!-- Labels -->
     <string name="diagnosis_label"><u>Diagnosis</u></string>
+
+    <!-- child strings -->
+    <string name="last_well_check_up"><u>Last Well Check Up</u></string>
+    <string name="next_well_check_up"><u>Next Well Check Up</u></string>
+    <string name="last_hearing_test"><u>Last Hearing Test</u></string>
+    <string name="hearing_test_result"><u>Hearing Test Result</u></string>
+    <string name="next_hearing_test"><u>Next Hearing Test</u></string>
+    <string name="last_eye_exam"><u>Last Eye Exam</u></string>
+    <string name="last_blood_test_for_low_iron_or_anemia"><u>Last Blood Test for Low Iron or Anemia</u></string>
+    <string name="last_blood_test_for_thyroid_problems"><u>Last Blood Test for Thyroid Problems</u></string>
+    <string name="any_prior_surgeries"><u>Any Prior Surgeries?</u></string>
+    <string name="any_eye_problems"><u>Any Eye Problems?</u></string>
+    <string name="any_hearing_problems"><u>Any Hearing Problems?</u></string>
+    <string name="any_neck_problems"><u>Any Neck Problems?</u></string>
+    <string name="any_thyroid_problems"><u>Any Thyroid Problems?</u></string>
+    <string name="any_heart_problems"><u>Any Heart Problems?</u></string>
+    <string name="any_breathing_problems"><u>Any Breathing Problems?</u></string>
+    <string name="any_problems_with_diarrhea_or_constipation"><u>Any Problems With Diarrhea or Constipation?</u></string>
+    <string name="any_problems_related_to_the_brain"><u>Any Problems Related to the Brain?</u></string>
+    <string name="any_problems_related_to_the_blood_stream"><u>Any problems Related to the Blood Stream?</u></string>
+    <string name="any_problems_related_to_the_immune_system"><u>Any Problems Related to the Immune System?</u></string>
+    <string name="medications"><u>Medications</u></string>
 
 </resources>
