@@ -44,7 +44,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/museo_sans_rounded700"
                 android:gravity="center_vertical"
-                android:text="Occupation:"/>
+                android:text="Specialty:"/>
 
             <TextView
                 android:id="@+id/tv_patient_label"
