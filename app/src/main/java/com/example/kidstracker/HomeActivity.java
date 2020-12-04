@@ -44,7 +44,6 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
@@ -52,7 +51,8 @@ public class HomeActivity extends AppCompatActivity {
                 int id = destination.getId();
                 if (id == R.id.nav_child_registration || id == R.id.nav_add_notes || id == R.id.nav_child_screening ||
                         id == R.id.nav_child_medical || id == R.id.nav_settings || id == R.id.nav_about ||
-                        id == R.id.nav_add_provider || id == R.id.nav_provider_info) {
+                        id == R.id.nav_add_provider || id == R.id.nav_provider_info || id == R.id.nav_child_info ||
+                        id == R.id.nav_edit_child) {
                     bottomNavigationView.setVisibility(View.GONE);
                 } else if (!(id == R.id.nav_calendar) && !(id == R.id.nav_notes)) {
                     bottomNavigationView.getMenu().getItem(0).setCheckable(false);
