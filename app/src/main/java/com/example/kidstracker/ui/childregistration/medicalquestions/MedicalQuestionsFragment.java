@@ -49,17 +49,17 @@ public class MedicalQuestionsFragment extends Fragment {
         mChild = (Child) getArguments().getSerializable("child");
 
         onNextQuestionClick();
-        goToHomeFragment();
+        goToChildrenFragment();
 
         return root;
     }
 
-    private void goToHomeFragment() {
+    private void goToChildrenFragment() {
         mBinding.bvGoToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewModel.insertChild(mChild);
-                Navigation.findNavController(v).navigate(R.id.nav_home);
+                Navigation.findNavController(v).navigate(R.id.nav_children);
             }
         });
     }
@@ -115,6 +115,7 @@ public class MedicalQuestionsFragment extends Fragment {
                     }
                     questionCounter++;
                     mBinding.rgGroup.clearCheck();
+                    mBinding.etAdditionalInfo.setText("");
                     showNextQuestion(mMedicalQuestionList);
                 } else {
                     Toasty.error(getActivity(), "Please answer the question!" ,Toast.LENGTH_SHORT, true).show();
@@ -166,6 +167,8 @@ public class MedicalQuestionsFragment extends Fragment {
         else if(questionCounter == 12) {
             mBinding.etMedications.setVisibility(View.VISIBLE);
             mBinding.rgGroup.setVisibility(View.GONE);
+            mBinding.tvAdditionalLabel.setVisibility(View.GONE);
+            mBinding.etAdditionalInfo.setVisibility(View.GONE);
             currentQuestion = medicalQuestions.get(questionCounter);
             mBinding.tvQuestion.setText(currentQuestion.getQuestion());
             mBinding.pbQuestion.setProgress(questionCounter);
