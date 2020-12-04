@@ -83,4 +83,16 @@
         android:label="Provider's Information"
         tools:layout="@layout/provider_info_fragment" />
 
+    <fragment
+        android:id="@+id/nav_child_info"
+        android:name="com.example.kidstracker.ui.children.child.ChildFragment"
+        android:label="Child Information"
+        tools:layout="@layout/child_fragment" />
+
+    <fragment
+        android:id="@+id/nav_edit_child"
+        android:name="com.example.kidstracker.ui.children.editchild.EditChildFragment"
+        android:label="Edit Child"
+        tools:layout="@layout/fragment_edit_child" />
+
 </navigation>

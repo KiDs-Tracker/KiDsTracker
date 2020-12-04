@@ -17,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" >
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/iv_gender"
@@ -32,9 +32,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -62,16 +62,16 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/museo_sans_rounded700"
                     android:gravity="center_vertical"
-                    android:text="Occupation:" />
+                    android:text="Specialty:" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -111,90 +111,89 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_top" />
+
         <LinearLayout
+            android:id="@+id/layout_middle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_top">
+            app:layout_constraintTop_toBottomOf="@+id/divider">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_patient_name_label"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginTop="16dp"
-                android:orientation="vertical">
+                android:fontFamily="@font/museo_sans_rounded700"
+                android:gravity="center_vertical"
+                android:text="Patient's Name" />
 
-                <TextView
-                    android:id="@+id/tv_patient_name_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/museo_sans_rounded700"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Patient's Name:" />
+            <TextView
+                android:id="@+id/tv_patient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/museo_slab300"
+                android:gravity="center_vertical"
+                android:text="Daniel Toriz" />
 
-                <TextView
-                    android:id="@+id/tv_physician_location_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/museo_sans_rounded700"
-                    android:gravity="center_vertical"
-                    android:text="Physician's Location:" />
-
-                <TextView
-                    android:id="@+id/tv_physician_number_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/museo_sans_rounded700"
-                    android:gravity="center_vertical"
-                    android:text="Physician's Number:" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+            <TextView
+                android:id="@+id/tv_physician_location_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="vertical">
+                android:fontFamily="@font/museo_sans_rounded700"
+                android:gravity="center_vertical"
+                android:text="Physician's Location" />
 
-                <TextView
-                    android:id="@+id/tv_patient_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/museo_slab300"
-                    android:gravity="center_vertical"
-                    android:text="Daniel Toriz" />
+            <TextView
+                android:id="@+id/tv_physician_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/museo_slab300"
+                android:gravity="center_vertical"
+                android:text="2140 Alta St. Los Angeles CA"
+                android:textColor="@color/primary" />
 
-                <TextView
-                    android:id="@+id/tv_physician_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/museo_slab300"
-                    android:gravity="center_vertical"
-                    android:text="2140 Alta St. Los Angeles CA" />
+            <TextView
+                android:id="@+id/tv_physician_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/museo_sans_rounded700"
+                android:gravity="center_vertical"
+                android:text="Physician's Number" />
 
-                <TextView
-                    android:id="@+id/tv_physician_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/primary"
-                    android:fontFamily="@font/museo_slab300"
-                    android:gravity="center_vertical"
-                    android:text="323-621-7837" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_physician_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/museo_slab300"
+                android:gravity="center_vertical"
+                android:text="323-621-7837"
+                android:textColor="@color/primary" />
 
         </LinearLayout>
 
@@ -202,22 +201,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/vchlogo"
-            android:layout_gravity="bottom|center"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_middle"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fb_edit_provider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_edit_24"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_baseline_edit_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

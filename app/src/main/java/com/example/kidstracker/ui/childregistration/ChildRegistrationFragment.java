@@ -44,7 +44,6 @@ import es.dmoral.toasty.Toasty;
 public class ChildRegistrationFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
 
     private ChildRegistrationFragmentBinding mBinding;
-    private ChildRegistrationViewModel mViewModel;
     private Child mChild = new Child();
 
     @Override
@@ -60,12 +59,6 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
         onRegisterChildClick();
 
         return root;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ChildRegistrationViewModel.class);
     }
 
     private void onDiagnosisClick() {
@@ -97,7 +90,7 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
             @Override
             public void onClick(View v) {
                 insertNameToChild();
-                if (!(mChild.getAge() < 0) && (mChild.getGender() == 0 || mChild.getGender() == 1) && mChild.getDiagnosis() == 0) {
+                if (!(mChild.getAge().isEmpty()) && (mChild.getGender() == 0 || mChild.getGender() == 1) && mChild.getDiagnosis() == 0) {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("child", mChild);
                     Navigation.findNavController(v).navigate(R.id.nav_child_screening, bundle);
@@ -170,11 +163,7 @@ public class ChildRegistrationFragment extends Fragment implements DatePickerDia
         String date = Month + "/" + dayOfMonth + "/" + year;
         String birthDate = dayOfMonth + "/" + Month + "/" + year;
         mBinding.tvDate.setText(date);
-        calculateBirthDay(birthDate);
+        mChild.setAge(birthDate);
     }
 
-    private void calculateBirthDay(String birthDate) {
-        int age = mViewModel.getAge(birthDate);
-        mChild.setAge(age);
-    }
 }

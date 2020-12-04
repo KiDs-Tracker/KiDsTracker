@@ -92,7 +92,14 @@ public class ChildrenFragment extends Fragment {
     private void createAdapter(List<Child> children) {
         mBinding.rvChildren.setLayoutManager(new LinearLayoutManager(getContext()));
         mBinding.rvChildren.setHasFixedSize(true);
-        mChildrenAdapter = new ChildrenAdapter(getContext(), children);
+        mChildrenAdapter = new ChildrenAdapter(getContext(), children, new ChildrenAdapter.ChildrenClickListener() {
+            @Override
+            public void onChildClick(Child child) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("child", child);
+                Navigation.findNavController(getView()).navigate(R.id.nav_child_info, bundle);
+            }
+        });
         mBinding.rvChildren.setAdapter(mChildrenAdapter);
     }
 

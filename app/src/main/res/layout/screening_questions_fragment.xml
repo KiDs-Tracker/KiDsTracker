@@ -160,6 +160,16 @@
                 android:background="@drawable/button"
                 android:visibility="gone"/>
 
+            <TextView
+                android:id="@+id/tv_blank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:fontFamily="@font/museo_slab300"
+                android:text="If not sure, leave it blank and go to next question"
+                android:visibility="visible" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

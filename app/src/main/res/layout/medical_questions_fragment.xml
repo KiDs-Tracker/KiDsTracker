@@ -20,7 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@android:style/Widget.Holo.ProgressBar.Horizontal"
-            android:max="12"
+            android:max="13"
             android:progress="0" />
 
         <TextView
@@ -69,7 +69,9 @@
                 android:id="@+id/rg_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start" >
+                android:layout_gravity="start"
+                android:visibility="visible">
+
 
                 <RadioButton
                     android:id="@+id/rb_option_one"
@@ -94,6 +96,34 @@
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/tv_additional_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Enter Additional Information"
+                android:fontFamily="@font/museo_slab700" />
+
+            <EditText
+                android:id="@+id/et_additional_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Enter here"
+                android:fontFamily="@font/museo_slab300"
+                android:padding="15dp"
+                android:background="@drawable/edit_text_all" />
+
+            <EditText
+                android:id="@+id/et_medications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:hint="Enter medications"
+                android:fontFamily="@font/museo_slab700"
+                android:padding="15dp"
+                android:background="@drawable/edit_text_all"
+                />
             <Button
                 android:id="@+id/bv_next_question"
                 android:layout_width="match_parent"
